@@ -14,7 +14,7 @@ resources:
       ref: main
   containers:
     - container: linux-gcc
-      image: ghcr.io/tianocore/containers/fedora-37-test:54e5bd1
+      image: ghcr.io/cfernald/mu_devops/ubuntu-22-test:latest
 
 variables:
 - group: tool-chain-ubuntu-gcc
@@ -26,5 +26,5 @@ jobs:
     vm_image: $(vm_image)
     container_image: linux-gcc
     extra_install_step:
-          - script: sudo dnf --assumeyes install openssl-devel
+          - script: sudo apt-get install -y openssl-dev
             displayName: Install openssl
