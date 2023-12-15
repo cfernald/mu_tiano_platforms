@@ -293,6 +293,7 @@ class PlatformBuilder(UefiBuilder, BuildSettingsManager):
         args += " DEBUG=" + str(1 if self.env.GetValue("TARGET").lower() == 'debug' else 0)
         args += " SPM_MM=1 EL3_EXCEPTION_HANDLING=1 ENABLE_SME_FOR_NS=0 ENABLE_SVE_FOR_NS=0"
         args += " ENABLE_FEAT_HCX=1" # Features used by hypervisor
+        args += " DRTM_SUPPORT=1 MBEDTLS_DIR=" + shell_environment.GetBuildVars().GetValue("MBED_TLS_PATH", "") # Enable DRTM in TF-A
         # args += " FEATURE_DETECTION=1" # Enforces support for features enabled.
         args += " BL32=" + os.path.join(op_fv, "BL32_AP_MM.fd")
         args += " all fip"

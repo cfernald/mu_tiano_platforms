@@ -1,0 +1,19 @@
+## @file
+# Download mbedtls to be used for compiling TF-A with DRTM.
+#
+# Copyright (c) Microsoft Corporation.
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+{
+  "id": "mbed-tls-sbsa",
+  "scope": "qemusbsa",
+  "type": "web",
+  "name": "mbed-tls",
+  "source": "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v2.28.6.zip",
+  "version": "2.28.6",
+  "internal_path": "/mbedtls-2.28.6/",
+  "sha256": "79e7679a1e88db56ee7c6e352ae6d24d67db2c2d102443343ea8938baa578d59",
+  "compression_type": "zip",
+  "flags": ["set_build_var"],
+  "var_name": "MBED_TLS_PATH"
+}
